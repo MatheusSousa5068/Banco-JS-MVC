@@ -1,12 +1,13 @@
 class Poupanca extends Conta {
     constructor(numero, saldo, dataAniversario) {
         super(numero, saldo)
-        this.dataAniversario = dataAniversario
+        this._dataAniversario = dataAniversario
+    }
+    get dataAniversario() {
+        return this._dataAniversario
     }
 
-    juros(data) {
-        if(this.dataAniversario === data) {
-            super.creditar(super.saldo*0.1)
-        }
+    set dataAniversario(novaData) {
+        this._dataAniversario = novaData
     }
 } 
